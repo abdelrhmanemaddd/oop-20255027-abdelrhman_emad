@@ -1,0 +1,13 @@
+// Online Java Compiler (Editor)
+// Write and run Java online using this editor.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter number of days");
+        int days=input.nextInt();
+        int weeks=days/7;
+        int remain_days=days%7;
+        System.out.println(weeks+"weeks"+remain_days+"remaining days");
+    }
+}
