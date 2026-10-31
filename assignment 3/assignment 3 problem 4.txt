@@ -1,0 +1,36 @@
+// Online Java Compiler (Editor)
+// Write and run Java online using this editor.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("enter positive integer");
+        Scanner input=new Scanner (System.in);
+        int n=input.nextInt();
+        int largest=Integer.MIN_VALUE;
+        int smallest=Integer.MAX_VALUE;
+        int sum=0;
+        int count=0;
+        while(n!=0) {
+            if(n>0) {
+       if(n>largest) {
+           largest=n;
+       } if(n<smallest) {
+           smallest=n;
+       } sum=sum+n;
+                count++;
+            } 
+            n=input.nextInt();
+        }
+        if(count>0) {
+            double avg=(double) sum/count;
+            System.out.println("Largest="+ largest);
+            System.out.println("Smallest ="+ smallest);
+            System.out.println("average="+avg);
+        } else {
+            System.out.println("no positive numbers entered");
+        }
+    }
+}
+
+
+
