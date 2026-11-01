@@ -1,0 +1,20 @@
+// Online Java Compiler (Editor)
+// Write and run Java online using this editor.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try clicking the Run button.");
+            System.out.println("enter price,quantity");
+        Scanner input=new Scanner(System.in);
+        double price=input.nextDouble();
+        int quantity=input.nextInt();
+        double subtotal=price*quantity;
+        final double tax_rate=0.14;
+        double tax=subtotal*tax_rate;
+        double total=subtotal+tax;
+        System.out.printf("subtotal= %.2f%n"+ subtotal);
+        System.out.printf("tax = %.2f%n"+ tax);
+        System.out.printf("total = %.2f%n" + total);
+        
+    }
+}
