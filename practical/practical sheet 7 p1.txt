@@ -1,0 +1,75 @@
+
+
+package javaapplication71;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author STUDENT
+ */
+public class Bankaccount {
+    private int accountnumber;
+    private String accountholder;
+    private double balance; 
+    
+   public Bankaccount(int accountnumber,String accountholder,double balance) {
+       this.accountnumber=accountnumber;
+       this.accountholder=accountholder;
+       this.balance=balance;
+   } 
+   public Bankaccount() {
+       accountnumber=0;
+       accountholder="Unknown";
+       balance=0.0;
+   } 
+   public void deposit(double amount) {
+       if(amount>0) {
+           balance=balance+amount;
+           System.out.println("successful amount");
+       } else {
+           System.out.println("invalid amount:");
+       }
+   } 
+   public void withdraw(double amount) {
+       if(amount>0 && balance>=amount) {
+           balance-=amount;
+           System.out.println("successful withdraw");
+       } else {
+           System.out.println("insufficient balance");
+       }
+   } 
+   public int Getaccountnumber() {
+       return accountnumber;
+   }
+   public String Getaccountholder() {
+       return accountholder;
+   }
+   public double Getbalance() {
+       return balance;
+   }
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+         System.out.print("Enter account number: ");
+        int number = input.nextInt();
+        System.out.print("Enter account holder name: ");
+        String name =input.next();
+          System.out.print("Enter your balance: ");
+        double Balance = input.nextDouble();
+        
+        
+        Bankaccount account = new Bankaccount(number,name,Balance);
+        
+         System.out.print("Enter deposit amount: ");
+        double depositAmount = input.nextDouble();
+        account.deposit(depositAmount);
+         System.out.print("Enter withdrawal amount: ");
+        double withdrawalAmount = input.nextDouble();
+         account.withdraw(withdrawalAmount);
+         System.out.println("Account Number: " + account.Getaccountnumber());
+        System.out.println("Account Holder: " + account.Getaccountholder());
+     System.out.println("Current Balance: " + account.Getbalance());
+        
+    }
+    
+}
